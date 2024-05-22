@@ -1,0 +1,21 @@
+dataset_path: arrow
+dataset_kwargs:
+  data_files:
+    test: I:\GithubProjects\mergekit-evolve\slice_et100_10\test\data-00000-of-00001.arrow
+output_type: generate_until
+training_split: null
+test_split: test
+#doc_to_text プロンプトを生成する
+doc_to_text: !function et100_metric.generate_prompt
+doc_to_target: ""
+#process_results スコアを返す
+process_results: !function et100_metric.process_results
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+#generation_kwargs model.generateの引数に入れるパラメータ
+generation_kwargs:
+  do_sample: false
+  temperature: 0.7
+  max_gen_toks: 1500
