@@ -215,3 +215,9 @@ We now have a [paper](https://arxiv.org/abs/2403.13257) you can cite for the Mer
   year={2024}
 }
 ```
+
+```
+wandb login
+mergekit-evolve ./evol_merge_config.yaml --storage-path ./workspace/evol_merge_storage --task-search-path ./workspace/eval_tasks --in-memory --merge-cuda --wandb
+mergekit-yaml ./workspace/evol_merge_storage/best_config.yaml --cuda ./workspace/final_merge
+```
